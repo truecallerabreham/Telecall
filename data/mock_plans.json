@@ -1,0 +1,52 @@
+[
+  {
+    "id": "plan-001",
+    "name": "Starter",
+    "price": 29,
+    "data_allowance": "20GB",
+    "minutes": "Unlimited",
+    "sms": "Unlimited",
+    "description": "Perfect for light users who need basic connectivity.",
+    "features": ["20GB 4G/5G data", "Unlimited calls", "Unlimited SMS", "Free caller ID"]
+  },
+  {
+    "id": "plan-002",
+    "name": "Plus",
+    "price": 49,
+    "data_allowance": "60GB",
+    "minutes": "Unlimited",
+    "sms": "Unlimited",
+    "description": "Great for streaming and social media lovers.",
+    "features": ["60GB 4G/5G data", "Unlimited calls", "Unlimited SMS", "Free caller ID", "10GB hotspot", "HD streaming"]
+  },
+  {
+    "id": "plan-003",
+    "name": "Unlimited",
+    "price": 79,
+    "data_allowance": "Unlimited",
+    "minutes": "Unlimited",
+    "sms": "Unlimited",
+    "description": "For power users who need it all.",
+    "features": ["Unlimited 4G/5G data", "Unlimited calls", "Unlimited SMS", "Free caller ID", "20GB hotspot", "4K streaming", "Priority support"]
+  },
+  {
+    "id": "plan-004",
+    "name": "Family",
+    "price": 129,
+    "data_allowance": "100GB",
+    "minutes": "Unlimited",
+    "sms": "Unlimited",
+    "description": "Share with up to 4 lines for the whole family.",
+    "features": ["100GB shared data", "4 lines included", "Unlimited calls", "Unlimited SMS", "Parental controls", "Family locator"]
+  },
+  {
+    "id": "plan-005",
+    "name": "Business",
+    "price": 99,
+    "data_allowance": "Unlimited",
+    "minutes": "Unlimited",
+    "sms": "Unlimited",
+    "description": "Enterprise-grade connectivity for professionals.",
+    "features": ["Unlimited data", "Unlimited calls", "Unlimited SMS", "VPN included", "International roaming", "24/7 dedicated support", "Expense management"]
+  }
+]

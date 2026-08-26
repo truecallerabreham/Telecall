@@ -1,0 +1,79 @@
+[
+  {
+    "id": "bill-001",
+    "customer_id": "cust-001",
+    "billing_period": "2025-01",
+    "plan_charge": 29.00,
+    "usage_charges": 5.50,
+    "taxes": 2.75,
+    "total": 37.25,
+    "status": "paid",
+    "due_date": "2025-02-15",
+    "items": [
+      {"description": "Starter Plan", "amount": 29.00},
+      {"description": "International calls (11 min)", "amount": 5.50},
+      {"description": "Taxes and fees", "amount": 2.75}
+    ]
+  },
+  {
+    "id": "bill-002",
+    "customer_id": "cust-002",
+    "billing_period": "2025-01",
+    "plan_charge": 79.00,
+    "usage_charges": 0.00,
+    "taxes": 6.32,
+    "total": 85.32,
+    "status": "paid",
+    "due_date": "2025-02-10",
+    "items": [
+      {"description": "Unlimited Plan", "amount": 79.00},
+      {"description": "Taxes and fees", "amount": 6.32}
+    ]
+  },
+  {
+    "id": "bill-003",
+    "customer_id": "cust-003",
+    "billing_period": "2025-01",
+    "plan_charge": 49.00,
+    "usage_charges": 12.00,
+    "taxes": 4.88,
+    "total": 65.88,
+    "status": "overdue",
+    "due_date": "2025-02-05",
+    "items": [
+      {"description": "Plus Plan", "amount": 49.00},
+      {"description": "Data roaming (2GB)", "amount": 12.00},
+      {"description": "Taxes and fees", "amount": 4.88}
+    ]
+  },
+  {
+    "id": "bill-004",
+    "customer_id": "cust-004",
+    "billing_period": "2025-01",
+    "plan_charge": 99.00,
+    "usage_charges": 0.00,
+    "taxes": 7.92,
+    "total": 106.92,
+    "status": "paid",
+    "due_date": "2025-02-08",
+    "items": [
+      {"description": "Business Plan", "amount": 99.00},
+      {"description": "Taxes and fees", "amount": 7.92}
+    ]
+  },
+  {
+    "id": "bill-005",
+    "customer_id": "cust-005",
+    "billing_period": "2025-01",
+    "plan_charge": 129.00,
+    "usage_charges": 0.00,
+    "taxes": 10.32,
+    "total": 139.32,
+    "status": "unpaid",
+    "due_date": "2025-02-01",
+    "items": [
+      {"description": "Family Plan", "amount": 129.00},
+      {"description": "Taxes and fees", "amount": 10.32}
+    ]
+  }
+]

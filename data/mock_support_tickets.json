@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ticket-001",
+    "customer_id": "cust-001",
+    "subject": "Billing inquiry",
+    "description": "Customer wants to understand charges on their last bill.",
+    "status": "open",
+    "priority": "medium",
+    "created_at": "2025-01-15",
+    "category": "billing"
+  },
+  {
+    "id": "ticket-002",
+    "customer_id": "cust-002",
+    "subject": "Network connectivity issues",
+    "description": "Customer reports dropped calls in downtown area.",
+    "status": "in_progress",
+    "priority": "high",
+    "created_at": "2025-01-14",
+    "category": "network"
+  },
+  {
+    "id": "ticket-003",
+    "customer_id": "cust-003",
+    "subject": "Plan upgrade request",
+    "description": "Customer wants to upgrade from Plus to Unlimited plan.",
+    "status": "resolved",
+    "priority": "low",
+    "created_at": "2025-01-13",
+    "category": "plan_change"
+  },
+  {
+    "id": "ticket-004",
+    "customer_id": "cust-004",
+    "subject": "International roaming setup",
+    "description": "Customer traveling abroad next month needs roaming enabled.",
+    "status": "open",
+    "priority": "medium",
+    "created_at": "2025-01-12",
+    "category": "technical"
+  },
+  {
+    "id": "ticket-005",
+    "customer_id": "cust-005",
+    "subject": "Account suspension appeal",
+    "description": "Customer wants to reactivate suspended account.",
+    "status": "open",
+    "priority": "high",
+    "created_at": "2025-01-11",
+    "category": "account"
+  }
+]

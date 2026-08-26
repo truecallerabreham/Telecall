@@ -1,0 +1,57 @@
+[
+  {
+    "id": "cust-001",
+    "name": "John Smith",
+    "phone": "+14155551234",
+    "email": "john.smith@email.com",
+    "plan_id": "plan-001",
+    "status": "active",
+    "account_balance": 45.50,
+    "join_date": "2024-03-15",
+    "address": "123 Main St, San Francisco, CA 94102"
+  },
+  {
+    "id": "cust-002",
+    "name": "Sarah Johnson",
+    "phone": "+14155555678",
+    "email": "sarah.j@email.com",
+    "plan_id": "plan-003",
+    "status": "active",
+    "account_balance": 120.00,
+    "join_date": "2023-11-20",
+    "address": "456 Oak Ave, Los Angeles, CA 90001"
+  },
+  {
+    "id": "cust-003",
+    "name": "Michael Chen",
+    "phone": "+14155559012",
+    "email": "m.chen@email.com",
+    "plan_id": "plan-002",
+    "status": "active",
+    "account_balance": 78.25,
+    "join_date": "2024-06-10",
+    "address": "789 Pine Rd, Seattle, WA 98101"
+  },
+  {
+    "id": "cust-004",
+    "name": "Emily Davis",
+    "phone": "+14155553456",
+    "email": "emily.d@email.com",
+    "plan_id": "plan-005",
+    "status": "active",
+    "account_balance": 250.00,
+    "join_date": "2023-08-05",
+    "address": "321 Elm St, Chicago, IL 60601"
+  },
+  {
+    "id": "cust-005",
+    "name": "Robert Wilson",
+    "phone": "+14155557890",
+    "email": "r.wilson@email.com",
+    "plan_id": "plan-004",
+    "status": "suspended",
+    "account_balance": -15.00,
+    "join_date": "2024-01-22",
+    "address": "654 Maple Dr, New York, NY 10001"
+  }
+]
