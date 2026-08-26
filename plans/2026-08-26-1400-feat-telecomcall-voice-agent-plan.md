@@ -187,12 +187,15 @@ The work is sequenced in 10 phases, each building on the previous:
   - `src/telecomcall/observability/__init__.py` — observability package
   - `scripts/test_llm.py` — LLM connection test
 - **Approach:** Create the full directory tree matching the course architecture. `pyproject.toml` includes all dependencies (FastRTC, LangGraph, Groq, Qdrant, Opik, Twilio, etc.). `config.py` uses Pydantic settings with nested models for Groq, Twilio, Qdrant, and Opik configuration. `test_llm.py` makes a basic Groq API call to verify connectivity.
-- **Test scenarios:**
-  - `uv sync` installs all dependencies without errors
-  - `test_llm.py` prints an LLM response when run with valid API key
-  - All `__init__.py` files exist and are importable
-  - `config.py` loads settings from `.env` file
-- **Verification:** Run `uv run python scripts/test_llm.py` and see a response from the LLM.
+- **Micro-milestones:**
+  - 1.1 Create directory structure — all `__init__.py` files. No verification needed (structure only).
+  - 1.2 Create `pyproject.toml` with all dependencies. No verification needed (config only).
+  - 1.3 Create `.env.example` with all required variables. No verification needed (template only).
+  - 1.4 Create `.gitignore` for Python project. No verification needed (config only).
+  - 1.5 Create `README.md` with project description. No verification needed (docs only).
+  - 1.6 Create `config.py` with Pydantic settings. No verification needed (code only).
+  - 1.7 Create `Makefile` with build commands. No verification needed (config only).
+  - 1.8 Create `scripts/test_llm.py`. **[MILESTONE GOAL]** — Run `uv run python scripts/test_llm.py` and see an LLM response. Commit and push.
 
 ### U2. Core Agent
 
@@ -204,11 +207,10 @@ The work is sequenced in 10 phases, each building on the previous:
   - `src/telecomcall/agent/tools/plan_search.py` — mock plan search tool
   - `scripts/test_agent.py` — agent test script
 - **Approach:** Implement `model_has_tool_calls()` heuristic that detects tool calls in model step data. Create a mock `search_plan_mock_tool` using LangChain's `@tool` decorator. `test_agent.py` creates a LangGraph agent with Groq LLM, InMemorySaver checkpointer, and the mock tool, then tests with a plan query.
-- **Test scenarios:**
-  - Agent responds to "what plans do you have?" using the mock tool
-  - Tool call detection works for different message formats
-  - Agent maintains conversation state across multiple invocations
-- **Verification:** Run `uv run python scripts/test_agent.py` and see the agent invoke the tool and respond with plan information.
+- **Micro-milestones:**
+  - 2.1 Create `agent/utils.py` with `model_has_tool_calls()`. No verification needed (utility only).
+  - 2.2 Create `agent/tools/plan_search.py` with mock tool. No verification needed (code only).
+  - 2.3 Create `scripts/test_agent.py`. **[MILESTONE GOAL]** — Run `uv run python scripts/test_agent.py` and see agent invoke the tool and respond. Commit and push.
 
 ### U3. Voice Layer
 
@@ -226,13 +228,16 @@ The work is sequenced in 10 phases, each building on the previous:
   - `src/telecomcall/agent/fastrtc_agent.py` — FastRTCAgent class
   - `scripts/test_voice.py` — browser voice chat test
 - **Approach:** Abstract STT/TTS behind base classes for flexibility. Moonshine and Kokoro implementations wrap FastRTC's model getters. `FastRTCAgent` class encapsulates the full pipeline: STT → Agent → TTS with sound effects. It creates the LangGraph agent internally, builds a `ReplyOnPause` handler, and exposes a `Stream` object. `test_voice.py` launches the Gradio UI.
-- **Test scenarios:**
-  - STT transcribes audio input to text
-  - TTS converts text to audio output
-  - FastRTCAgent processes audio through the full pipeline
-  - Gradio UI launches and accepts voice input
-  - Audio round-trip completes within 3 seconds
-- **Verification:** Run `uv run python scripts/test_voice.py`, open the Gradio URL, speak into the microphone, and hear the agent respond.
+- **Micro-milestones:**
+  - 3.1 Create `stt/base.py` — abstract STT class. No verification needed (interface only).
+  - 3.2 Create `stt/local/moonshine.py` — Moonshine implementation. No verification needed (code only).
+  - 3.3 Create `stt/utils.py` — STT factory. No verification needed (code only).
+  - 3.4 Create `tts/base.py` — abstract TTS class. No verification needed (interface only).
+  - 3.5 Create `tts/local/kokoro.py` — Kokoro implementation. No verification needed (code only).
+  - 3.6 Create `tts/utils.py` — TTS factory. No verification needed (code only).
+  - 3.7 Create `voice.py` — sound effects. No verification needed (code only).
+  - 3.8 Create `agent/fastrtc_agent.py` — FastRTCAgent class. No verification needed (code only).
+  - 3.9 Create `scripts/test_voice.py`. **[MILESTONE GOAL]** — Run `uv run python scripts/test_voice.py`, open Gradio URL, speak into mic, hear agent respond. Commit and push.
 
 ### U4. FastAPI + Twilio
 
@@ -246,12 +251,13 @@ The work is sequenced in 10 phases, each building on the previous:
   - `Dockerfile` — production container
   - `docker-compose.yml` — app + Qdrant services
 - **Approach:** FastAPI app with CORS middleware and voice routes. `/voice/webhook` and `/voice/incoming` return TwiML with `<Connect><Stream>` to bridge phone audio to FastRTC. `/voice/status` handles call status updates. `make_outbound_call.py` uses Twilio SDK to initiate calls. Docker Compose runs the app and Qdrant containers.
-- **Test scenarios:**
-  - FastAPI app starts and responds to health check
-  - `/voice/webhook` returns valid TwiML XML
-  - Outbound call script connects to a phone number
-  - Docker Compose starts both services
-- **Verification:** Run `uv run uvicorn telecomcall.api.main:app` and hit `/health` endpoint. Test webhook returns TwiML.
+- **Micro-milestones:**
+  - 4.1 Create `api/main.py` — FastAPI app with CORS. No verification needed (code only).
+  - 4.2 Create `api/routes/voice.py` — Twilio webhook routes. No verification needed (code only).
+  - 4.3 Create `scripts/make_outbound_call.py`. No verification needed (code only).
+  - 4.4 **[MILESTONE GOAL]** — Run `uv run uvicorn telecomcall.api.main:app` and `curl http://localhost:8000/health` returns 200. Commit and push.
+  - 4.5 Create `Dockerfile`. No verification needed (config only).
+  - 4.6 Create `docker-compose.yml` with app + Qdrant. No verification needed (config only).
 
 ### U5. Telecom Data
 
@@ -264,12 +270,11 @@ The work is sequenced in 10 phases, each building on the previous:
   - `data/mock_support_tickets.json` — 5 support tickets
   - `data/mock_billing.json` — 5 monthly invoices
 - **Approach:** Create structured JSON data representing a realistic mobile carrier. Plans range from Starter ($29/mo) to Business Pro ($149/mo). Customers have varying plans, usage levels, and account statuses. Support tickets cover technical, billing, and account issues. Billing records show monthly charges with breakdowns.
-- **Test scenarios:**
-  - All JSON files are valid and parseable
-  - Plan data includes required fields (price, data allowance, features)
-  - Customer data references valid plan IDs
-  - Billing data references valid customer IDs
-- **Verification:** Load each JSON file in Python and verify structure with Pydantic models.
+- **Micro-milestones:**
+  - 5.1 Create `data/mock_plans.json`. No verification needed (data only).
+  - 5.2 Create `data/mock_customers.json`. No verification needed (data only).
+  - 5.3 Create `data/mock_support_tickets.json`. No verification needed (data only).
+  - 5.4 **[MILESTONE GOAL]** — Create `data/mock_billing.json` and verify all JSON files parse correctly with Python. Commit and push.
 
 ### U6. Semantic Search
 
@@ -281,12 +286,9 @@ The work is sequenced in 10 phases, each building on the previous:
   - `scripts/ingest_plans.py` — data ingestion script
   - `docker-compose.yml` — updated with Qdrant service
 - **Approach:** Create a `QdrantSearchService` class that connects to Qdrant, creates collections, and performs semantic search. `ingest_plans.py` reads JSON data, generates embeddings (using a sentence transformer or Groq embeddings), and upserts into Qdrant. The agent's plan search tool queries this service.
-- **Test scenarios:**
-  - Qdrant container starts and responds to health check
-  - Ingestion script creates collection and upserts documents
-  - Search returns relevant results for natural language queries
-  - Search handles empty results gracefully
-- **Verification:** Run `docker compose up -d qdrant`, then `uv run python scripts/ingest_plans.py`, then query Qdrant API and see results.
+- **Micro-milestones:**
+  - 6.1 Create `infrastructure/superlinked/service.py` — QdrantSearchService class. No verification needed (code only).
+  - 6.2 **[MILESTONE GOAL]** — Create `scripts/ingest_plans.py`, start Qdrant with `docker compose up -d qdrant`, run ingestion, query Qdrant API and see results. Commit and push.
 
 ### U7. Multi-turn Memory
 
@@ -297,11 +299,9 @@ The work is sequenced in 10 phases, each building on the previous:
   - `src/telecomcall/agent/fastrtc_agent.py` — updated with thread management
   - `scripts/test_agent.py` — updated with multi-turn test
 - **Approach:** The LangGraph agent already uses `InMemorySaver` for checkpointing. Each call session gets a unique `thread_id` (from Twilio CallSid or generated for Gradio). The agent's state persists across multiple user messages within the same session. Update `FastRTCAgent` to accept and manage thread IDs properly.
-- **Test scenarios:**
-  - Agent remembers context from previous turns in the same session
-  - Different sessions (thread_ids) are isolated from each other
-  - Agent handles follow-up questions correctly
-- **Verification:** Run a multi-turn test script that sends 3 messages to the same thread and verifies the agent references earlier context.
+- **Micro-milestones:**
+  - 7.1 Update `fastrtc_agent.py` with thread management. No verification needed (code only).
+  - 7.2 **[MILESTONE GOAL]** — Update `test_agent.py` with multi-turn test, run it, verify agent references earlier context. Commit and push.
 
 ### U8. Billing & Support Tools
 
@@ -315,13 +315,12 @@ The work is sequenced in 10 phases, each building on the previous:
   - `src/telecomcall/agent/tools/support_tickets.py` — support ticket tool
   - `src/telecomcall/agent/fastrtc_agent.py` — updated with all tools
 - **Approach:** Implement LangChain `@tool` decorated functions for each data access pattern. `plan_search` queries Qdrant semantically. `customer_lookup` searches by phone number or name. `billing_lookup` retrieves invoices by customer ID. `support_tickets` searches tickets by customer or status. Register all tools with the agent.
-- **Test scenarios:**
-  - Plan search returns relevant plans for natural language queries
-  - Customer lookup finds customers by phone number
-  - Billing lookup returns invoice details
-  - Support ticket search finds tickets by customer
-  - Agent correctly routes queries to appropriate tools
-- **Verification:** Run agent test with queries like "what's my bill?", "find my account", "check my tickets" and verify correct tool invocation.
+- **Micro-milestones:**
+  - 8.1 Create `agent/tools/customer_lookup.py`. No verification needed (code only).
+  - 8.2 Create `agent/tools/billing_lookup.py`. No verification needed (code only).
+  - 8.3 Create `agent/tools/support_tickets.py`. No verification needed (code only).
+  - 8.4 Update `agent/tools/plan_search.py` to use Qdrant. No verification needed (code only).
+  - 8.5 **[MILESTONE GOAL]** — Update `fastrtc_agent.py` with all tools, run agent test with queries like "what's my bill?", verify correct tool invocation. Commit and push.
 
 ### U9. Analytics Dashboard
 
@@ -332,12 +331,9 @@ The work is sequenced in 10 phases, each building on the previous:
   - `src/telecomcall/observability/opik_tracer.py` — Opik tracing setup
   - `scripts/test_dashboard.py` — dashboard test script
 - **Approach:** Use Opik's Python SDK to trace agent executions. Log each query, response, tool call, and latency metric. Create a Gradio dashboard that reads from Opik's API and displays: query list with timestamps, response times, tool usage breakdown, and a search/filter interface.
-- **Test scenarios:**
-  - Opik tracer logs agent queries successfully
-  - Dashboard displays logged queries in a table
-  - Dashboard filters work correctly
-  - Latency metrics are captured accurately
-- **Verification:** Run agent with Opik tracing, then open dashboard and see logged data.
+- **Micro-milestones:**
+  - 9.1 Create `observability/opik_tracer.py`. No verification needed (code only).
+  - 9.2 **[MILESTONE GOAL]** — Create `scripts/test_dashboard.py`, run it, verify dashboard displays logged data. Commit and push.
 
 ### U10. Polish & Deploy
 
@@ -350,13 +346,11 @@ The work is sequenced in 10 phases, each building on the previous:
   - `README.md` — final documentation
   - `scripts/test_e2e.py` — end-to-end test
 - **Approach:** Verify the complete pipeline: phone call → Twilio → FastRTC → agent → response → phone. Update Docker Compose with all services. Create comprehensive Makefile targets. Write setup and usage documentation. Test outbound and inbound calls.
-- **Test scenarios:**
-  - Docker Compose starts all services successfully
-  - Inbound call to Twilio number connects to agent
-  - Agent responds to voice queries over the phone
-  - Analytics dashboard shows call data
-  - All Makefile commands work correctly
-- **Verification:** Call the Twilio phone number, ask about plans, hear the agent respond, then check the analytics dashboard.
+- **Micro-milestones:**
+  - 10.1 Update `docker-compose.yml` with final configuration. No verification needed (config only).
+  - 10.2 Update `Makefile` with all commands. No verification needed (config only).
+  - 10.3 Update `README.md` with final documentation. No verification needed (docs only).
+  - 10.4 **[MILESTONE GOAL]** — Create `scripts/test_e2e.py`, run full end-to-end test, verify complete pipeline works. Commit and push.
 
 ---
 
