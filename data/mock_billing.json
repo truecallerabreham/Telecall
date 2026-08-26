@@ -1,0 +1,63 @@
+[
+  {
+    "invoice_id": "INV-2025-01-001",
+    "customer_id": "cust_001",
+    "billing_period": "2025-01",
+    "plan_charge": 49.00,
+    "overage_charge": 0.00,
+    "tax": 3.92,
+    "total": 52.92,
+    "due_date": "2025-02-01",
+    "paid": true,
+    "paid_date": "2025-01-01"
+  },
+  {
+    "invoice_id": "INV-2025-01-002",
+    "customer_id": "cust_002",
+    "billing_period": "2025-01",
+    "plan_charge": 79.00,
+    "overage_charge": 35.00,
+    "tax": 9.12,
+    "total": 123.12,
+    "due_date": "2025-02-01",
+    "paid": true,
+    "paid_date": "2025-01-01"
+  },
+  {
+    "invoice_id": "INV-2025-01-003",
+    "customer_id": "cust_003",
+    "billing_period": "2025-01",
+    "plan_charge": 29.00,
+    "overage_charge": 0.00,
+    "tax": 2.32,
+    "total": 31.32,
+    "due_date": "2025-02-01",
+    "paid": false,
+    "paid_date": null,
+    "balance": 31.32
+  },
+  {
+    "invoice_id": "INV-2025-01-004",
+    "customer_id": "cust_004",
+    "billing_period": "2025-01",
+    "plan_charge": 99.00,
+    "overage_charge": 0.00,
+    "tax": 7.92,
+    "total": 106.92,
+    "due_date": "2025-02-01",
+    "paid": true,
+    "paid_date": "2025-01-01"
+  },
+  {
+    "invoice_id": "INV-2025-01-005",
+    "customer_id": "cust_005",
+    "billing_period": "2025-01",
+    "plan_charge": 149.00,
+    "overage_charge": 0.00,
+    "tax": 11.92,
+    "total": 160.92,
+    "due_date": "2025-02-01",
+    "paid": true,
+    "paid_date": "2025-01-01"
+  }
+]

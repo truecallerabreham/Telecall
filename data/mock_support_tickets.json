@@ -1,0 +1,67 @@
+[
+  {
+    "ticket_id": "TKT-001",
+    "customer_id": "cust_001",
+    "type": "technical",
+    "subject": "Slow data speeds in downtown area",
+    "description": "Customer reports significantly slower data speeds (under 5 Mbps) in the downtown financial district during business hours. Started about a week ago.",
+    "status": "open",
+    "priority": "medium",
+    "created_at": "2025-01-15T10:30:00Z",
+    "last_updated": "2025-01-15T10:30:00Z",
+    "agent": "Lisa",
+    "resolution": null
+  },
+  {
+    "ticket_id": "TKT-002",
+    "customer_id": "cust_002",
+    "type": "billing",
+    "subject": "Unexpected overage charges",
+    "description": "Customer was charged $35 in overage fees despite having an unlimited plan. Questions appear to be related to hotspot usage exceeding 30GB cap.",
+    "status": "open",
+    "priority": "high",
+    "created_at": "2025-01-14T14:20:00Z",
+    "last_updated": "2025-01-15T09:00:00Z",
+    "agent": "Lisa",
+    "resolution": null
+  },
+  {
+    "ticket_id": "TKT-003",
+    "customer_id": "cust_003",
+    "type": "account",
+    "subject": "Cannot access online account",
+    "description": "Customer unable to log into their account portal. Password reset emails not being received. Suspects email on file may be incorrect.",
+    "status": "resolved",
+    "priority": "medium",
+    "created_at": "2025-01-10T08:15:00Z",
+    "last_updated": "2025-01-11T16:45:00Z",
+    "agent": "Lisa",
+    "resolution": "Updated email address on file and verified customer identity. Sent new password reset link. Customer confirmed access restored."
+  },
+  {
+    "ticket_id": "TKT-004",
+    "customer_id": "cust_004",
+    "type": "technical",
+    "subject": "Cannot send MMS messages",
+    "description": "Family plan primary account holder unable to send picture messages. Affects two lines on the account.",
+    "status": "open",
+    "priority": "high",
+    "created_at": "2025-01-16T07:00:00Z",
+    "last_updated": "2025-01-16T07:00:00Z",
+    "agent": "Lisa",
+    "resolution": null
+  },
+  {
+    "ticket_id": "TKT-005",
+    "customer_id": "cust_005",
+    "type": "upgrade",
+    "subject": "Want to add international roaming",
+    "description": "Business customer planning travel to Europe next month. Needs international roaming package added to account for 2 weeks.",
+    "status": "open",
+    "priority": "low",
+    "created_at": "2025-01-16T11:00:00Z",
+    "last_updated": "2025-01-16T11:00:00Z",
+    "agent": "Lisa",
+    "resolution": null
+  }
+]
