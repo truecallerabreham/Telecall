@@ -41,8 +41,8 @@ class Settings(BaseSettings):
     twilio: TwilioSettings = Field(default_factory=TwilioSettings)
     qdrant: QdrantSettings = Field(default_factory=QdrantSettings)
     opik: OpikSettings = Field(default_factory=OpikSettings)
-    stt_model: str = Field(default="moonshine", description="STT Model to use")
-    tts_model: str = Field(default="kokoro", description="TTS Model to use")
+    stt_model: str = Field(default="groq-whisper", description="STT Model to use")
+    tts_model: str = Field(default="edge-tts", description="TTS Model to use")
 
     model_config: ClassVar[SettingsConfigDict] = SettingsConfigDict(
         env_file=[".env"],
