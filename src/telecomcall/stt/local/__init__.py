@@ -1,1 +1,0 @@
-"""Local STT models."""
